@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY APP</title>
-</head>
-<body>
+<!--inherting the template from base.html-->
 
-    <h1>Hello this is your home page</h1>
-   
-        <ol>
-            <li>ram</li>
-            <li>shyam</li>
-            <li>Ghnshyam</li>
-        </ol>
- 
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Home page</title>
+{% endblock %}
+
+
+{% block body %}
+
+<h1>hello this is your home page</h1>
+<li>ram</li>
+<li>shyam</li>
+{% endblock %}

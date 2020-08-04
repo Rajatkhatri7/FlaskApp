@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 
 #flask obj
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Home Page" #can add html inside the quotes
+    return render_template('index.html')
 
 
 #decorater route to the main page

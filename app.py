@@ -1,5 +1,6 @@
 from flask import Flask,render_template
-from flsk_sqalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+
 # sqlalchemy helps to interact with databaselike Mysql,postgrlsql with flask like app
 from datetime import datetime
 
@@ -9,19 +10,17 @@ from datetime import datetime
 #flask obj
 app = Flask(__name__)
 #database path and add to data
-app.config('SQLALCHEMY_DATABASE_URI') = 'sqlite:///posts.db'
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db  = SQLAlchemy(app)
 #it will connect add flask to database
 
+class BlogPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    author = db.Column(db.String(20), nullable=False, default='N/A')
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-class BlogPosts(db.Model):
-
-    id  = db.Column(db.Integer,primary_key = True)
-    title = db.Column(db.String(100),nullable = False)
-    comtent = db.Column(db.Text,nullable = False)
-    author = db.Column(db.String(20),nullable = False,deflult = 'N/A')
-    date_created = db.Column(db.DateTime,nullable = False,default = datetime.utcnow)
 
 
 

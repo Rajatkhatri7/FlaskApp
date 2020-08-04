@@ -4,10 +4,38 @@ from flask import Flask,render_template
 app = Flask(__name__)
 
 
+#dummy data
+
+all_posts = [
+
+    {   'title':'Post1',
+
+        'content':'this is my content'
+    },
+
+
+
+    {   'title':'Post2',
+
+        'content':'this is my content2'
+    }
+
+
+
+
+]
+
+
+
+
+
 @app.route("/")
 def index():
     return render_template('index.html')
 
+@app.route("/posts")
+def posts():
+    return render_template('post.html',posts = all_posts)
 
 #decorater route to the main page
 @app.route('/home/users/<string:name>/posts/<int:id>') #used in dynamic url like name keep changing  etc

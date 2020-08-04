@@ -10,9 +10,9 @@ all_posts = [
 
     {   'title':'Post1',
 
-        'content':'this is my content'
+        'content':'this is my content',
+        'author':"Kush"
     },
-
 
 
     {   'title':'Post2',

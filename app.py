@@ -27,7 +27,12 @@ class BlogPost(db.Model):
 #from app import className
 #classname.query.all()    it will show the list of all the blog post in the database
 #db.session.add(classname(put the variable name and their values here))
-#
+
+
+#Databse operations
+#BlogPost.query.filter_by(author = "kush").all()
+#BlogPost.query.get(id) this take blog post by id no
+# >>> db.session.delete( BlogPost.query.get(3)) >>> db.session.commit() Delete a post
 
     # represent the database
     def __repr__(self):

@@ -2,14 +2,33 @@
 
 {% extends 'base.html' %}
 
-{% block head %} 
+{% block head %}
 <title>Home page</title>
 {% endblock %}
 
 
 {% block body %}
+<br>
+<h1>Home page</h1>
+<br>
 
-<h1>hello this is your home page</h1>
-<li>ram</li>
-<li>shyam</li>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Hi Forks 👋 </h1>
+
+            <p> M glad to welcome you on my blog posts. Btw I'm Rajat Khatri , you can call me <code>Kush</code>, I'm a Python Developer 🐍 and i write blogs as its my hobby. I luv to teach people. Here I'll be talking mostly (not only) about Dumb Machines(That's what my Professor call it😅😅) , oh i mean Computers,  Machine Learning ⚙️⚙️ , Python 🐍, Neural Networks 🧬 etc bla bla bla .</p>
+
+                
+
+
+            <p>You can visit my website <a href="https://hererajat.tech">hererajat.tech</a> to check out the cool stuff and projects which builded beyond just blogs</p>
+            <p>
+                <a class="btn btn-primary" href="/posts" role="button">Go To Blogs
+                    &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+
 {% endblock %}

@@ -23,7 +23,7 @@
         <br>
         Post: <input type='text' name='content' id='content'>
         <br>
-        <input type='submit' value='Post'>
+        <input class="btn btn-dark" type='submit' value='Post'>
     </form>
     <hr>
 
@@ -31,15 +31,18 @@
         <h2>{{ post.title }}</h2>
 
         {% if post.author %}
-            <h3>By: {{ post.author }}</h3>
+        
+        <small> Written By: {{ post.author }} on {{post.date_posted}}</small>
+        
+        <br>
 
         {% else %}
-            <h3>By: N/A</h3>
+            <small>Written By: Unknown</small>
         {% endif %}
         
         <p> READ: {{post.content}}</p>
-        <a href="/posts/delete/{{post.id}}">Delete</a>
-        <a href="/posts/edit/{{post.id}}">Edit</a>
+        <a class= "btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+        <a class= "btn btn-warning" href="/posts/edit/{{post.id}}">Edit</a>
 
         <br>
     {% endfor%}

@@ -17,12 +17,23 @@
     <hr>
     <h2>Create New Blog Post:</h2>
     <form action='/posts' method='POST'>
-        Title: <input type='text' name='title' id='title'>
+        Title: 
+
+        <input type='text' name='title' id='title' class = "form-control" aria-label="Enter Title" placeholder="Enter Title">
         <br>
-        Author: <input type='text' name='author' id='author'>
+
+        Author: 
+        
+        <input type='text' name='author' id='author' class="form-control" aria-label="Enter Author Name" placeholder="Enter Uthor name" >
         <br>
-        Post: <input type='text' name='content' id='content'>
+
+        Post: 
+        <textarea placeholder="Enter the Post" name="content" class="form-control" id="content" rows="3"></textarea>
+
+        
         <br>
+
+
         <input class="btn btn-dark" type='submit' value='Post'>
     </form>
     <hr>
@@ -39,11 +50,13 @@
         {% else %}
             <small>Written By: Unknown</small>
         {% endif %}
+        <br>
         
-        <p> READ: {{post.content}}</p>
+        <p style="white-space: pre-wrap;"> READ: {{post.content}}</p>
         <a class= "btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
-        <a class= "btn btn-warning" href="/posts/edit/{{post.id}}">Edit</a>
+        <a class= "btn btn-info" href="/posts/edit/{{post.id}}">Edit</a>
 
+        <br>
         <br>
     {% endfor%}
 

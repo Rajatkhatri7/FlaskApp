@@ -10,12 +10,28 @@
 
     <hr>
     <h2>Edit Blog Post:</h2>
+
+    <br>
     <form action='/posts/edit/{{post.id}}' method='POST'>
-        Title: <input type='text' name='title' id='title' value = {{post.title}}>
+
+
+       <h4>Title: </h4> 
+        <input type='text' name='title' value = {{post.title}} id='title' class = "form-control" >
+
         <br>
-        Author: <input type='text' name='author' id='author' value = {{post.author}}>
+
+        <h4>Author: </h4>
+        
+        <input type='text' name='author' value = {{post.author}} id='author' class = "form-control" >
+
         <br>
-        Post: <input type='text' name='content' id='content'value = {{post.content}}>
+
+
+
+        <h4>Post:</h4>
+        <textarea  name="content" class="form-control" id="content" rows="3">{{post.content}}</textarea>
+
+        
         <br>
         <input class="btn btn-dark" type='submit' value='Save'>
     </form>

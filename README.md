@@ -1,2 +1,2 @@
 # FlaskApp
-Beginner flask app
+Blog Post Website created with flask and sqlite

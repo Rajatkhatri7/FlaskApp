@@ -82,6 +82,13 @@ def posts():
         return render_template('post.html',posts = all_posts)
 
 
+#deleting a post
+@app.route('/posts/delete/<int:id>')
+def delete(id):
+    post = BlogPost.query.get_or_404(id)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect('/posts')
     
 
 #decorater route to the main page

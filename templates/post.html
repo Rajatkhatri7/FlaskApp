@@ -38,6 +38,8 @@
         {% endif %}
         
         <p> READ: {{post.content}}</p>
+        <a href="/posts/delete/{{post.id}}">Delete</a>
+        <br>
     {% endfor%}
 
 {% endblock %}

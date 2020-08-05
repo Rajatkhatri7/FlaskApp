@@ -89,7 +89,21 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
     return redirect('/posts')
-    
+
+
+#edit the post 
+@app.route('/posts/edit/<int:id>',methods = ['GET','POST'])
+def edit(id):
+    post = BlogPost.query.get_or_404(id)
+
+    if request.method == 'POST':
+        post.title = request.form['title']
+        post.author = request.form['author']
+        post.content = request.form['content']
+        db.session.commit()
+        return redirect('/posts')   
+    else:
+        return render_template('edit.html',post=post)   
 
 #decorater route to the main page
 @app.route('/home/users/<string:name>/posts/<int:id>') #used in dynamic url like name keep changing  etc

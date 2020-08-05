@@ -33,7 +33,7 @@ class BlogPost(db.Model):
 #BlogPost.query.filter_by(author = "kush").all()
 #BlogPost.query.get(id) this take blog post by id no
 # >>> db.session.delete( BlogPost.query.get(3)) >>> db.session.commit() Delete a post
-
+# >>> BlogPost.query.get(1).title = "New POSSSSSr"  >>> db.session.commit()  Change the variables
     # represent the database
     def __repr__(self):
         return "Blog Post "+str(self.id)

@@ -12,32 +12,13 @@
 
 
 {% block body %}
-<h1>All Posts</h1>
-
+<br>
+<div>
+    <h1 style="display:inline">All Posts</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/posts/new" >+ New Post</a>
+</div>
     <hr>
-    <h2>Create New Blog Post:</h2>
-    <form action='/posts' method='POST'>
-        Title: 
-
-        <input type='text' name='title' id='title' class = "form-control" aria-label="Enter Title" placeholder="Enter Title">
-        <br>
-
-        Author: 
-        
-        <input type='text' name='author' id='author' class="form-control" aria-label="Enter Author Name" placeholder="Enter Uthor name" >
-        <br>
-
-        Post: 
-        <textarea placeholder="Enter the Post" name="content" class="form-control" id="content" rows="3"></textarea>
-
-        
-        <br>
-
-
-        <input class="btn btn-dark" type='submit' value='Post'>
-    </form>
-    <hr>
-
+    
     {% for post in posts %}
         <h2>{{ post.title }}</h2>
 
